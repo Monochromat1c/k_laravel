@@ -1,4 +1,4 @@
-@extends('layout.main')
+@extends('layout.main_old')
 @section('content')
     <link rel="stylesheet" href="/css/loginForm.css">
     </head>

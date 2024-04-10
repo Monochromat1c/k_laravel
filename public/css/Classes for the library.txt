@@ -1,0 +1,88 @@
+// Header
+.header
+.header-logo
+.header-link-wrapper-{center/left/right}
+.header-link-container
+
+
+// Cards
+.card
+.card-title (will only work if inside the .card)
+.card-body (will only work if inside the .card)
+
+
+// Colors
+// colors: primary, secondary, error, info, blue, red, yellow, green, orange, purple, gray, black, white
+.text-color-{colors}
+    // Light variation for colors
+    .text-color-{colors}-light-{1, 2, 3, 4, 5, 6, 7, 8, 9}
+    // Dark variation for colors
+    .text-color-{colors}-dark-{1, 2, 3, 4, 5, 6, 7, 8, 9}
+.text-hover-{colors}
+    // Light variation for colors
+    .text-hover-color-{colors}-light-{1, 2, 3, 4, 5, 6, 7, 8, 9}
+    // Dark variation for colors
+    .text-hover-color-{colors}-dark-{1, 2, 3, 4, 5, 6, 7, 8, 9}
+.background-color-{colors}
+    // Light variation for colors
+    .background-color-{colors}-light-{1, 2, 3, 4, 5, 6, 7, 8, 9}
+    // Dark variation for colors
+    .background-color-{colors}-dark-{1, 2, 3, 4, 5, 6, 7, 8, 9}
+    
+
+// Buttons
+.button
+.button-{colors}
+.button-outline-{colors}
+.button-complement-{colors}
+
+
+// Utilities
+// justify-content: flex-start, flex-end, center, space-between, space-around, space-evenly, initial, inherit
+// align-items:  normal, stretch, center, flex-start, flex-end, start, end, baseline, initial, inherit
+// width: percent-20, percent-30, percent-40, percent-50, percent-60, percent-70, percent-80, percent-90, percent-100, 
+        dvw-20, dvw-30, dvw-40, dvw-50, dvw-60, dvw-70, dvw-80, dvw-90, dvw-100, 
+// height: percent-20, percent-30, percent-40, percent-50, percent-60, percent-70, percent-80, percent-90, percent-100, 
+        dvh-20, dvh-30, dvh-40, dvh-50, dvh-60, dvh-70, dvh-80, dvh-90, dvh-100, 
+// flex-direction: row, row-reverse, column, column-reverse, initial, inherit
+// float: inline-start, inline-end, left, right, none
+.padding-{0, half, 1, 2, 3, 4, 5}
+.padding-left-{0, half, 1, 2, 3, 4, 5}
+.padding-right-{0, half, 1, 2, 3, 4, 5}
+.padding-top-{0, half, 1, 2, 3, 4, 5}
+.padding-bottom-{0, half, 1, 2, 3, 4, 5}
+.margin-{0, half, 1, 2, 3, 4, 5}
+.margin-left-{0, half, 1, 2, 3, 4, 5}
+.margin-right-{0, half, 1, 2, 3, 4, 5}
+.margin-top-{0, half, 1, 2, 3, 4, 5}
+.margin-bottom-{0, half, 1, 2, 3, 4, 5}
+.opacity-{10, 20, 30, 40, 50, 60, 70, 80, 90, 100}
+.border-radius-{default, none, extra-small, small, large, full}
+.display-{none, block, flex, inline, inline-block}
+.font-size-{small, large, extra-large, extra-extra-large}
+.text-align-{center, end, justify, left, right, start}
+.justify-{justify-content}
+.align-items-{align-items}
+.min-width-{width}
+.max-width-{width}
+.min-height-{height}
+.max-height-{height}
+.flex-direction-{flex-direction}
+.float-{float}
+
+
+// Grid
+// breakpoint: extra-small, small, medium, large, extra-large, breakpoint
+// grid-column: 1 to 12
+// layout-value: flex-start, flex-end, center, space-between, space-around;
+.container
+.row (justify-{layout-value}) 
+.column-{grid-column}-{breakpoint}
+.justify-content-{layout-value}
+
+
+// Navbar
+.navbar
+.site-title (will only work if it is inside .navbar)
+.container (will only work if it is inside .navbar)
+.navbar-background-color-{colors}

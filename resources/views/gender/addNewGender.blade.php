@@ -1,6 +1,5 @@
 @extends('layout.main')
 @section('content')
-    <link rel="stylesheet" href="/css/dashboard.css">
     </head>
 
     <body onload="loadPage()">
