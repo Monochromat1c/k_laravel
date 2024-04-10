@@ -52,7 +52,7 @@
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
-                                        <tbody id="tableBody">
+                                        <tbody id="tableBody" class="">
                                             @foreach ($genders as $gender)
                                                 <tr>
                                                     <td>{{ $gender->gender }}</td>
@@ -61,11 +61,11 @@
                                                     <td>
                                                         <div class="display-flex justify-center">
                                                             <a href="/gender/show/{{ $gender->gender_id }}"
-                                                                class="button-secondary text-color-white">View</a>
+                                                                class="button-secondary padding-top-half padding-bottom-half padding-left-1 padding-right-1 text-color-white">View</a>
                                                             <a href="/gender/edit/{{ $gender->gender_id }}"
-                                                                class="button-gray text-color-white">Edit</a>
+                                                                class="button-gray padding-top-half padding-bottom-half padding-left-1 padding-right-1 text-color-white">Edit</a>
                                                             <a href="/gender/delete/{{ $gender->gender_id }}"
-                                                                class="button-error text-color-white">Delete</a>
+                                                                class="button-error padding-top-half padding-bottom-half padding-left-1 padding-right-1 text-color-white">Delete</a>
                                                         </div>
                                                     </td>
                                                 </tr>
