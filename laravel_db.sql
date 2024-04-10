@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 07, 2024 at 11:42 AM
+-- Generation Time: Apr 10, 2024 at 03:19 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -121,7 +121,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`user_id`, `first_name`, `middle_name`, `last_name`, `suffix_name`, `birthday`, `gender_id`, `address`, `contact_number`, `email`, `username`, `password`, `created_at`, `updated_at`) VALUES
 (2, 'Charles Manuel', NULL, 'Diestro', NULL, '2024-03-15', 12, 'Sesame Street', '09987654321', 'cmdiestro+1@gmail.com', 'user', '$2y$12$lkOnSWwcRt9kPCP6DwVOKOGFHITEVEYLGjZH5DNzScdSnKT3Etr.m', '2024-03-29 00:03:11', '2024-03-31 05:26:11'),
-(3, 'Kezia', NULL, 'Dolor', NULL, '2024-03-14', 2, 'Abc, 123', '09423546875', 'kdolor@gmail.com', 'kezzz', '$2y$12$9PrfmEaS7tRJn/MoTgeuJ.rZmi4FxraK3AX7gRuzhws8kyhVCkJAa', '2024-03-29 03:27:38', '2024-03-29 03:27:38'),
+(3, 'Kezia Landrea', NULL, 'Dolor', NULL, '2024-03-14', 2, 'Abc, 123', '09423546875', 'kdolor@gmail.com', 'kezzz', '$2y$12$P77RFErJz9eJiz.y/b6WCOyTVx8s3V2eAYXZvDuMln02boae5YOEG', '2024-03-29 03:27:38', '2024-04-10 05:18:33'),
 (5, 'Lorem', 'Lorem', 'Lorem', 'Lorem', '2024-03-22', 7, 'Abc, 123', '09473829432', 'cmdiestro+3@gmail.com', 'sdf', '$2y$12$VZxlhzvOTqLS.66sS5yY.uou1j0AW0KMuJ.6CrLATW9VvC2ZZrOW2', '2024-03-31 03:04:45', '2024-03-31 03:04:45'),
 (6, 'Stanly', NULL, 'Kinnes', 'Junior', '2024-04-24', 5, 'Abc, 123', '09123457482', 'skinnes@gmail.com', 'skinnes', '$2y$12$flx6uoGa6aSMOBg2tVRhgub0pzbL23qhJ/vEOzrfUYmpXr5bNXW2e', '2024-03-31 23:58:59', '2024-03-31 23:58:59'),
 (7, 'Ian Gabriel', NULL, 'Dichosa', NULL, '2024-04-25', 3, 'Abc, 123', '09987634321', 'igdichosa@gmail.com', 'igdichosa', '$2y$12$6uxBKqRf6ESBvmGfSrp46.SzkuMKw5efXUPOCFvWUqWM1J.Weu54O', '2024-04-01 00:04:09', '2024-04-01 00:04:09'),
