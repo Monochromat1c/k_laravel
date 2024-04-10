@@ -29,15 +29,15 @@
                             @endif
                             <label for="gender" class="form-label">Delete Gender:</label>
                             <input type="text" id="input" class="form-control" id="gender"
-                                placeholder="Male/Female/Etc." name="gender" value="{{ $gender->gender }}" />
+                                placeholder="Male/Female/Etc." name="gender" value="{{ $gender->gender }}" readonly />
                             @error('gender')
                                 <div class="text-danger">{{ $message }}</div>
                             @enderror
                             <div id="gender-button" style="display:flex; justify-content: space-between;">
                                 <a href="/genders" class="btn btn-secondary"
-                                    style="font-size: 1.5rem; border-radius: 2rem; padding: 1rem 5rem;">No</a>
+                                    style="font-size: 1.5rem; border-radius: 2rem; padding: 1rem 5rem;">Go Back</a>
                                 <button style="font-size: 1.5rem; border-radius: 2rem; padding: 1rem 5rem;" type="submit"
-                                    class="btn btn-danger">Yes</button>
+                                    class="btn btn-danger">Delete Gender</button>
                             </div>
                         </div>
                     </form>

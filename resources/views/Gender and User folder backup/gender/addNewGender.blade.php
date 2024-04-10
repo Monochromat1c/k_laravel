@@ -26,12 +26,13 @@
                             </li>
                             <li><i class="fa-solid
                                     fa-user"></i><a class="links"
-                                    href="">User</a></li>
+                                    href="/users">User</a></li>
                             <li
-                                class="{{ Request::url() == url('/') ? 'active' : '' }} {{ Request::is('/gender/add') ? 'active' : '' }}">
+                                class="{{ Request::url() == url('/') ? 'active' : '' }} {{ Request::is('gender/add') ? 'active' : '' }}">
                                 <i class="fa-solid fa-venus"></i><a class="links" href="/gender/add">Add New Gender</a>
                             </li>
-                            <li><i class="fa-solid fa-user-plus"></i><a class="links" href="">Add New User</a></li>
+                            <li><i class="fa-solid fa-user-plus"></i><a class="links" href="/user/add">Add New User</a>
+                            </li>
                         </ul>
                     </nav>
                 </div>

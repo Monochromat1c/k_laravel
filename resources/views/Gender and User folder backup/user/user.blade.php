@@ -21,17 +21,16 @@
                     </h4>
                     <nav>
                         <ul>
-                            <li class="{{ Request::url() == url('/') ? 'active' : '' }} {{ Request::is('genders') ? 'active' : '' }} sidebar-link"
-                                data-title="View Gender List">
-                                <i class="fa-solid fa-mars"></i><a class="links" href="genders">Gender</a>
+                            <li class="sidebar-link" data-title="View Gender List">
+                                <i class="fa-solid fa-mars"></i><a class="links" href="/genders">Gender</a>
                             </li>
-                            <li class="sidebar-link" data-title="View User List"><i class="fa-solid
+                            <li class="{{ Request::url() == url('/') ? 'active' : '' }} {{ Request::is('users') ? 'active' : '' }} sidebar-link" data-title="View User List"><i class="fa-solid
         fa-user"></i><a
-                                    class="links" href="">User</a></li>
+                                    class="links" href="/users">User</a></li>
                             <li class="sidebar-link" data-title="Add New Gender"><i class="fa-solid fa-venus"></i><a
                                     class="links" href="/gender/add">Add New Gender</a></li>
                             <li class="sidebar-link" data-title="Add New User"><i class="fa-solid fa-user-plus"></i><a
-                                    class="links" href="">Add New User</a></li>
+                                    class="links" href="/user/add">Add New User</a></li>
 
                         </ul>
                     </nav>
@@ -41,15 +40,13 @@
                 <h1>Dashboard</h1>
                 <div class="gender-table-container container">
                     <div class="table-header">
-                        <h2>Gender List</h2>
-                        <div class="pagination">
-                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <h2>User List</h2>
+                        <div id="pagination">
                                 {{-- <form id="searchForm" class="d-flex" role="search">
                                     <input id="searchInput" class="form-control me-2" type="search"
                                         placeholder="Search for available gender" aria-label="Search">
                                 </form> --}}
-                            </ul>
-                            {{ $genders->links('vendor.pagination.custom-pagination') }}
+                            {{ $users->links('vendor.pagination.custom-pagination') }}
                         </div>
                     </div>
                     <table class="table table-striped">
@@ -60,6 +57,10 @@
                         @endif
                         <thead>
                             <tr>
+                                <th>Last Name</th>
+                                <th>First Name</th>
+                                <th>Middle Name</th>
+                                <th>Suffix Name</th>
                                 <th>Gender</th>
                                 <th>Created At</th>
                                 <th>Updated At</th>
@@ -67,18 +68,22 @@
                             </tr>
                         </thead>
                         <tbody id="tableBody">
-                            @foreach ($genders as $gender)
+                            @foreach ($users as $user)
                                 <tr>
-                                    <td>{{ $gender->gender }}</td>
-                                    <td>{{ $gender->created_at }}</td>
-                                    <td>{{ $gender->updated_at }}</td>
+                                    <td>{{ $user->last_name }}</td>
+                                    <td>{{ $user->first_name }}</td>
+                                    <td>{{ $user->middle_name }}</td>
+                                    <td>{{ $user->suffix_name }}</td>
+                                    <td>{{ $user->gender->gender }}</td>
+                                    <td>{{ $user->created_at }}</td>
+                                    <td>{{ $user->updated_at }}</td>
                                     <td>
                                         <div class="btn-group">
-                                            <a href="/gender/show/{{ $gender->gender_id }}"
+                                            <a href="/user/show/{{ $user->user_id }}"
                                                 class="btn btn-outline-primary">View</a>
-                                            <a href="/gender/edit/{{ $gender->gender_id }}"
+                                            <a href="/user/edit/{{ $user->user_id }}"
                                                 class="btn btn-outline-warning">Edit</a>
-                                            <a href="/gender/delete/{{ $gender->gender_id }}"
+                                            <a href="/user/delete/{{ $user->user_id }}"
                                                 class="btn btn-outline-danger">Delete</a>
                                         </div>
                                     </td>

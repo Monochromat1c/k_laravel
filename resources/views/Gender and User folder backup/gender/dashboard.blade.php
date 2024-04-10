@@ -22,14 +22,15 @@
                     <nav>
                         <ul>
                             <li>
-                                <i class="fa-solid fa-mars"></i><a class="links" href="genders">Gender</a>
+                                <i class="fa-solid fa-mars"></i><a class="links" href="/genders">Gender</a>
                             </li>
                             <li><i class="fa-solid
                                     fa-user"></i><a class="links"
-                                    href="">User</a></li>
+                                    href="/users">User</a></li>
                             <li><i class="fa-solid fa-venus"></i><a class="links" href="/gender/add">Add New Gender</a>
                             </li>
-                            <li><i class="fa-solid fa-user-plus"></i><a class="links" href="">Add New User</a></li>
+                            <li><i class="fa-solid fa-user-plus"></i><a class="links" href="/user/add">Add New User</a>
+                            </li>
                         </ul>
                     </nav>
                 </div>

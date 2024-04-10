@@ -7,9 +7,9 @@
 
         <div class="dashboard-container">
             <div id="dashboard">
+                {{-- <h1>Dashboard</h1> --}}
                 <div id="form-wrapper">
-                    <form id="gender-form" action="/user/destroy/{{ $user->user_id }}" method="post">
-                        @method('DELETE')
+                    <form id="gender-form" action="" method="POST">
                         @csrf
                         @if (session()->has('message'))
                             <div class="alert alert-success">
@@ -17,7 +17,7 @@
                             </div>
                         @endif
                         <div id="input-wrapper">
-                            <h2>Do you want to delete this user?</h2>
+                            <h2>View User</h2>
                             @if ($errors->any())
                                 <div id="error_message" class="alert alert-danger">
                                     <ul>
@@ -31,71 +31,63 @@
                                 <div class="mb-3">
                                     <label for="first_name">First Name:</label>
                                     <input type="text" class="form-control" id="first_name" name="first_name"
-                                        value="{{ $user->first_name }}" placeholder="Enter your first name"  readonly />
+                                        value="{{ $user->first_name }}" readonly />
                                 </div>
                                 <div class="mb-3">
                                     <label for="middle_name">Middle Name:</label>
                                     <input type="text" class="form-control" id="middle_name" name="middle_name"
-                                        value="{{ $user->middle_name }}" placeholder="Enter your middle name"  readonly />
+                                        value="{{ $user->middle_name }}" readonly />
                                 </div>
                                 <div class="mb-3">
                                     <label for="last_name">Last Name:</label>
                                     <input type="text" class="form-control" id="last_name" name="last_name"
-                                        value="{{ $user->last_name }}" placeholder="Enter your last name"  readonly />
+                                        value="{{ $user->last_name }}" readonly />
                                 </div>
                                 <div class="mb-3">
                                     <label for="suffix_name">Suffix Name:</label>
                                     <input type="text" class="form-control" id="suffix_name" name="suffix_name"
-                                        value="{{ $user->suffix_name }}" placeholder="Enter your suffix name"  readonly />
+                                        value="{{ $user->suffix_name }}" readonly />
                                 </div>
                                 <div class="mb-3">
                                     <label for="birthday">Birth Date:</label>
                                     <input type="date" class="form-control" id="birthday" name="birthday"
-                                        value="{{ $user->birthday }}" placeholder="Enter your birth date"  readonly />
+                                        value="{{ $user->birthday }}" readonly />
                                 </div>
                                 <div class="mb-3">
-                                    <label for="age">Gender</label>
-                                    <select class="form-select user-form-select" name="gender_id">
-                                        <option value="" selected>Select your gender:</option>
-                                        @foreach ($genders as $gender)
-                                            <option value="{{ $gender->gender_id }}"
-                                                {{ $user->gender_id == $gender->gender_id ? 'selected' : '' }}>
-                                                {{ $gender->gender }}</option>
-                                        @endforeach
-                                    </select>
+                                    <label for="gender">Gender:</label>
+                                    <input type="text" class="form-control" id="gender" name="gender"
+                                        value="{{ $user->gender->gender }}" readonly />
                                 </div>
                                 <div class="mb-3 column-span-2">
                                     <label for="address">Address:</label>
                                     <input type="text" class="form-control" id="address" name="address"
-                                        value="{{ $user->address }}" placeholder="Enter your address"  readonly />
+                                        value="{{ $user->address }}" readonly />
                                 </div>
                                 <div class="mb-3 column-span-2">
                                     <label for="contact_number">Contact Number:</label>
                                     <input type="text" class="form-control" id="contact_number" name="contact_number"
-                                        value="{{ $user->contact_number }}" placeholder="Enter your contact number"  readonly />
+                                        value="{{ $user->contact_number }}" readonly />
                                 </div>
                                 <div class="mb-3 column-span-2">
                                     <label for="email">Email Address:</label>
                                     <input type="text" class="form-control" id="email" name="email"
-                                        value="{{ $user->email }}" placeholder="Enter your email address"  readonly />
+                                        value="{{ $user->email }}" readonly />
                                 </div>
                                 <div class="mb-3 column-span-2">
                                     <label for="username">Username:</label>
                                     <input type="text" class="form-control" id="username" name="username"
-                                        value="{{ $user->username }}" placeholder="Enter your new username"  readonly />
+                                        value="{{ $user->username }}" readonly />
                                 </div>
-                                <div class="mb-3 column-span-2">
-                                    <label for="password">Password:</label>
-                                    <input type="password" class="form-control" id="password" name="password"
-                                        value="{{ $user->password }}" placeholder="Enter your new password"  readonly />
+                                <div class="mb-3" style="visibility: hidden;">
+                                    <label for="username">Username:</label>
+                                    <input type="text" class="form-control" id="username" name="username"
+                                        value="{{ $user->username }}" readonly />
+                                </div>
+                                <div id="user-button" class="mb-3">
+                                    <a href="/users" class="btn btn-secondary"
+                                        style="font-size: 1.5rem; border-radius: 2rem; padding: 1rem 5rem;">Back</a>
                                 </div>
                             </section>
-                            <div id="user-button" class="" style="display: flex; justify-content: space-between;">
-                                <a href="/users" class="btn btn-secondary"
-                                    style="font-size: 1.5rem; border-radius: 2rem; padding: 1rem 5rem;">Go Back</a>
-                                <button style="font-size: 1.5rem; border-radius: 2rem; padding: 1rem 5rem;" type="submit"
-                                    class="btn btn-danger">Delete User</button>
-                            </div>
                         </div>
                     </form>
                 </div>
