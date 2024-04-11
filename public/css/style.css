@@ -200,37 +200,3 @@ td {
         flex-direction: column;
     }
 }
-
-/* Dialog */
-dialog {
-    opacity: 0;
-    display: block;
-    transition: all 0.3s ease;
-}
-
-dialog[open] {
-    opacity: 1;
-    scale: 1.1rem;
-}
-
-dialog::backdrop {
-    background-color: rgb(19, 19, 22, 0.66);
-}
-
-.viewDialog,
-.editDialog {
-    align-self: center;
-    justify-self: center;
-}
-
-#viewDialogForm,
-#editDialogForm,
-#deleteDialogForm {
-    background-color: #cccccc;
-}
-
-#viewDialogForm > *,
-#editDialogForm > *,
-#deleteDialogForm > * {
-    color: rgb(0, 0, 0);
-}

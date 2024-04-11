@@ -63,10 +63,32 @@ class UserController extends Controller
     }
 
     // View user table
-    public function user()
+    public function user(Request $request)
     {
-        $users = User::orderBy('last_name')->paginate(10);
-        return view('user.user', compact('users'));
+        $genders = $this->genderOption();
+
+        $searchQuery = $request->input('q');
+        $genderFilter = $request->input('gender_filter'); // Assuming you have a select input for filtering by gender
+
+        $users = User::query();
+
+        if ($searchQuery) {
+            $users->where(function($query) use ($searchQuery) {
+                $query->where('first_name', 'like', '%' . $searchQuery . '%')
+                    ->orWhere('middle_name', 'like', '%' . $searchQuery . '%')
+                    ->orWhere('last_name', 'like', '%' . $searchQuery . '%')
+                    ->orWhere('suffix_name', 'like', '%' . $searchQuery . '%');
+            });
+        }
+
+        if ($genderFilter) {
+            $users->whereHas('gender', function($query) use ($genderFilter) {
+                $query->where('gender_id', $genderFilter);
+            });
+        }
+
+        $users = $users->orderBy('last_name')->paginate(10);
+        return view('user.user', compact('users', 'searchQuery', 'genderFilter', 'genders'));
     }
 
     // View specific user
@@ -158,7 +180,7 @@ class UserController extends Controller
         if($user && auth()->attempt($validated)) {
             auth()->login($user);
             $request->session()->regenerate();
-            return redirect('/genders');
+            return redirect('/users');
         } else {
             return back()->with('message_success', 'Username or password is incorrect.');
         }

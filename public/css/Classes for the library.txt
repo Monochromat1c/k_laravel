@@ -46,7 +46,7 @@
         dvh-20, dvh-30, dvh-40, dvh-50, dvh-60, dvh-70, dvh-80, dvh-90, dvh-100, 
 // flex-direction: row, row-reverse, column, column-reverse, initial, inherit
 // float: inline-start, inline-end, left, right, none
-.padding-{0, half, 1, 2, 3, 4, 5}
+.padding-{0, half, 1, 2, 3, 4, 5, button-base, button-1, button-2, button-3, button-4, button-5}
 .padding-left-{0, half, 1, 2, 3, 4, 5}
 .padding-right-{0, half, 1, 2, 3, 4, 5}
 .padding-top-{0, half, 1, 2, 3, 4, 5}

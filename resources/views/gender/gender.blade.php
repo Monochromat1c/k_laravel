@@ -13,7 +13,7 @@
                     </label>
                     <section class="margin-left-auto margin-right-auto">
                         <img src="/img/bg.png" class="sidebar-icon border-radius-full" alt="" srcset="">
-                        <h2 class="margin-top-1 text-align-center">Lorem Ipsum</h2>
+                        <h2 class="margin-top-1 text-align-center">Administrator</h2>
                     </section>
                     <section>
                         <nav class="sidebar-link-container margin-top-5">
@@ -64,12 +64,9 @@
                             <div id="dashboard"
                                 class="margin-top-3 background-color-gray-light-6 padding-bottom-1 border-radius-large table-container">
                                 <section class="table-header padding-left-2 padding-right-2 ">
-                                    <h1 class="padding-top-1">List of Available Gender</h1>
-                                    <div class="display-flex justify-space-between" id="pagination">
-                                        {{ $genders->links('vendor.pagination.custom-pagination') }}
-                                    </div>
+                                    <h1 class="padding-top-1 padding-bottom-1">List of Available Gender</h1>
                                 </section>
-                                <div class="margin-top-half padding-left-2 padding-right-2">
+                                <div class="margin-top-half padding-left-2 padding-right-2 display-flex flex-direction-column justify-space-between min-height-percent-100" id="table-container">
                                     <table class="min-width-percent-100">
                                         @if (session()->has('message'))
                                             <div id="success-message"
@@ -105,6 +102,9 @@
                                             @endforeach
                                         </tbody>
                                     </table>
+                                    <div class="display-flex justify-space-between position-absolute" id="pagination">
+                                        {{ $genders->links('vendor.pagination.custom-pagination') }}
+                                    </div>
                                 </div>
                             </div>
                         </div>

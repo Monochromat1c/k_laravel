@@ -13,7 +13,7 @@
                     </label>
                     <section class="margin-left-auto margin-right-auto">
                         <img src="/img/bg.png" class="sidebar-icon border-radius-full" alt="" srcset="">
-                        <h2 class="margin-top-1 text-align-center">Lorem Ipsum</h2>
+                        <h2 class="margin-top-1 text-align-center">Administrator</h2>
                     </section>
                     <section>
                         <nav class="sidebar-link-container margin-top-5">
@@ -65,9 +65,27 @@
                                 class="margin-top-3 background-color-gray-light-6 padding-bottom-1 border-radius-large table-container">
                                 <section class="table-header padding-left-2 padding-right-2 ">
                                     <h1 class="padding-top-1">List of Available User</h1>
-                                    <div class="display-flex justify-space-between" id="pagination">
-                                        {{ $users->links('vendor.pagination.custom-pagination') }}
-                                    </div>
+                                    <form id="user-search-form" class="display-flex justify-space-between margin-top-1 padding-bottom-1" action="{{ route('user.user') }}" method="GET">
+                                        <section>
+                                            <input class="padding-half border-radius-large" type="text" name="q"
+                                                value="{{ $query ?? '' }}" placeholder="Search users...">
+                                            <button
+                                                class="button-primary text-color-white padding-button-2 border-radius-large"
+                                                type="submit">Search</button>
+                                        </section>
+                                        <section>
+                                            <select class="padding-half border-radius-large" id="gender-filter"
+                                                name="gender_filter">
+                                                <option value="">All Genders</option>
+                                                @foreach ($genders as $gender)
+                                                    <option value="{{ $gender->gender_id }}"
+                                                        {{ $genderFilter == $gender->gender_id ? 'selected' : '' }}>
+                                                        {{ $gender->gender }}
+                                                    </option>
+                                                @endforeach
+                                            </select>
+                                        </section>
+                                    </form>
                                 </section>
                                 <div class="margin-top-half padding-left-2 padding-right-2">
                                     <table class="min-width-percent-100">
@@ -113,6 +131,9 @@
                                             @endforeach
                                         </tbody>
                                     </table>
+                                    <div class="display-flex justify-space-between" id="pagination">
+                                        {{ $users->links('vendor.pagination.custom-pagination') }}
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -120,6 +141,12 @@
                 </div>
             </div>
         </div>
+
+        <script>
+            document.getElementById('gender-filter').addEventListener('change', function() {
+                document.getElementById('user-search-form').submit();
+            });
+        </script>
 
         <script src="/js/search.js"></script>
         <script src="/js/links.js"></script>
