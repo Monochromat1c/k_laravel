@@ -7,7 +7,7 @@
 @endif
 
 @if ($paginator->hasPages())
-    <nav class="pagination display-flex">
+    <nav class="pagination display-flex align-items-center">
         <ul class="pagination  display-flex">
             {{-- First Page Link --}}
             <li class="page-item {{ $paginator->onFirstPage() ? 'disabled' : '' }}">
