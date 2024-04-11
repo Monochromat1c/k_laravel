@@ -12,7 +12,7 @@
                         <i class="fa fa-x border-radius-full x font-size-large"></i>
                     </label>
                     <section class="margin-left-auto margin-right-auto">
-                        <img src="/img/bg.png" class="sidebar-icon border-radius-full" alt="" srcset="">
+                        <img src="/img/bg.png" class="sidebar-icon border-radius-full display-flex margin-auto" alt="icon" srcset="">
                         <h2 class="margin-top-1 text-align-center">Administrator</h2>
                     </section>
                     <section>
