@@ -1,5 +1,5 @@
 // Get all <li> elements inside the sidebar
-var sidebarLinks = document.querySelectorAll("#sidebar li");
+var sidebarLinks = document.querySelectorAll("#list-container li");
 
 // Loop through each <li> element
 sidebarLinks.forEach(function (link) {

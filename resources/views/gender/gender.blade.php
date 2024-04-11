@@ -5,14 +5,40 @@
     <body onload="loadPage()">
 
         <div class="display-flex">
-            <div class="sidebar min-width-dvw-20 min-height-dvh-100" id="sidebar">
-                <div class="text-color-white display-flex flex-direction-column justify-center align-items-center">
+            <div class="sidebar min-width-dvw-20" id="sidebar">
+                <div class="text-color-white display-flex flex-direction-column min-height-dvh-100">
                     <input type="checkbox" name="check" id="check" class="checkbox display-none">
                     <label for="check" class="x-container">
                         <i class="fa fa-x border-radius-full x font-size-large"></i>
                     </label>
-                    <h1>Sidebar</h1>
-                    Sidebar
+                    <section class="margin-left-auto margin-right-auto">
+                        <img src="/img/bg.png" class="sidebar-icon border-radius-full" alt="" srcset="">
+                        <h2 class="margin-top-1 text-align-center">Lorem Ipsum</h2>
+                    </section>
+                    <section>
+                        <nav class="sidebar-link-container margin-top-5">
+                            <ul class="list-container" id="list-container">
+                                <h3 class="text-align-center">List</h3>
+                                <li class="margin-bottom-half">
+                                    <i class="padding-right-half fa-solid fa-mars"></i>
+                                    <a href="/genders">Gender List</a>
+                                </li>
+                                <li class="margin-bottom-2">
+                                    <i class="padding-right-half fa-solid fa-user"></i>
+                                    <a href="/users">User List</a>
+                                </li>
+                                <h3 class="text-align-center">Form</h3>
+                                <li class="margin-bottom-half">
+                                    <i class="padding-right-half fa-solid fa-venus"></i>
+                                    <a href="/gender/add">Gender Form</a>
+                                </li>
+                                <li class="margin-bottom-half">
+                                    <i class="padding-right-half fa-solid fa-user-plus"></i>
+                                    <a href="/user/add">User Form</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </section>
                 </div>
             </div>
             <div class="content min-width-dvw-100">
@@ -36,17 +62,18 @@
                     <main class="margin-bottom-3">
                         <div class="container">
                             <div id="dashboard"
-                                class="margin-top-3 background-color-gray-light-6 padding-2 border-radius-large table-container">
-                                <section class="table-header">
-                                    <h1>List of Available Gender</h1>
+                                class="margin-top-3 background-color-gray-light-6 padding-bottom-1 border-radius-large table-container">
+                                <section class="table-header padding-left-2 padding-right-2 ">
+                                    <h1 class="padding-top-1">List of Available Gender</h1>
                                     <div class="display-flex justify-space-between" id="pagination">
                                         {{ $genders->links('vendor.pagination.custom-pagination') }}
                                     </div>
                                 </section>
-                                <div class="margin-top-half">
+                                <div class="margin-top-half padding-left-2 padding-right-2">
                                     <table class="min-width-percent-100">
                                         @if (session()->has('message'))
-                                            <div id="success-message" class="alert alert-success">
+                                            <div id="success-message"
+                                                class="background-color-secondary text-color-white padding-1 text-align-center margin-bottom-half">
                                                 {{ session('message') }}
                                             </div>
                                         @endif
@@ -87,6 +114,7 @@
         </div>
 
         <script src="/js/search.js"></script>
+        <script src="/js/links.js"></script>
         <script src="/js/success-message.js"></script>
         <script src="/js/sidebar-toggle.js"></script>
     </body>

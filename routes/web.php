@@ -38,6 +38,7 @@ Route::controller(GenderController::class)->group(function () {
     Route::post('/gender/add', 'creategender');
 // Update the gender you want to edit
     Route::put('/gender/update/{gender}', 'update')->name('gender.update');
+
 // Delete specific gender
     Route::delete('/gender/destroy/{gender}', 'destroy')->name('gender.destroy');
 });
@@ -64,45 +65,3 @@ Route::controller(UserController::class)->group(function () {
     Route::delete('/user/destroy/{user}', 'destroy')->name('user.destroy');
 
 });
-// Route::get('/', function () {
-//     return view('gender.dashboard');
-// });
-
-// Route::get('edits', function () {
-//     return view('user.edit');
-// })->name('user.edit');
-// Route::get('deletes', function () {
-//     return view('user.delete');
-// })->name('user.delete');
-// Route::get('creates', function () {
-//     return view('user.create');
-// })->name('user.create');
-// Route::get('dashboard', function () {
-//     return view('user.dashboard');
-// });
-// Route::get('genders', function () {
-//     return view('user.gender');
-// })->name('user.gender');
-// Route::get('views', function () {
-//     return view('user.view');
-// })->name('user.view');
-// Route::get('viewspes', function () {
-//     return view('user.viewspecific');
-// })->name('user.viewspecific');
-// Route::get('addgenders', function () {
-//     return view('user.addgender');
-// })->name('user.addgender');
-// To display Genders in the Gender Input
-// Route::get('creates', [UserController::class, 'showGender'])->name('user.create');
-//Crud Operations Route
-// Route::post('submit_data', [UserController::class, 'submit_data']);
-// Route::post('submit_gender', [UserController::class, 'creategender']);
-//Display Genders in Table
-// //Display Users in Table
-// Route::get('/views', [UserController::class, 'displayUsers'])->name('user.view');
-// //To Display Gender Demo
-// Route::get('genderform', [GenderController::class, 'viewGender']);
-// //Routes to store Gender in DB
-// Route::post('gender_add', [GenderController::class, 'store']);
-// //Disply in Table
-// Route::get('/gendertable', [GenderController::class, 'index']);

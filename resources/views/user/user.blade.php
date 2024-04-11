@@ -1,107 +1,129 @@
-@extends('layout.main')
+@extends('layout.main_new')
 @section('content')
-    <link rel="stylesheet" href="/css/dashboard.css">
     </head>
 
     <body onload="loadPage()">
 
-        <div class="dashboard-container">
-            <div id="sidebar-wrapper">
-                <div id="sidebar">
-                    <a href="javascript:void(0)" id="closebtn" class="closebtn" onclick="closeNav()"
-                        data-title="Minimize Sidebar"><i class="fa-solid fa-xmark"></i></a>
-                    <a href="javascript:void(0)" id="openbtn" class="openbtn" onclick="openNav()"
-                        data-title="Maximize Sidebar"><i class="fa-solid fa-bars"></i></a>
-                    <h3 id="title" class="title">
-                        &lt;/Hello<span class="world">World</span>&gt;
-                    </h3>
-                    <img id="sidebar-icon" src="img/bg.png" alt="icon">
-                    <h4 id="name" class="name">
-                        Jammy Jellyfish
-                    </h4>
-                    <nav>
-                        <ul>
-                            <li class="sidebar-link" data-title="View Gender List">
-                                <i class="fa-solid fa-mars"></i><a class="links" href="/genders">Gender</a>
-                            </li>
-                            <li class="{{ Request::url() == url('/') ? 'active' : '' }} {{ Request::is('users') ? 'active' : '' }} sidebar-link" data-title="View User List"><i class="fa-solid
-        fa-user"></i><a
-                                    class="links" href="/users">User</a></li>
-                            <li class="sidebar-link" data-title="Add New Gender"><i class="fa-solid fa-venus"></i><a
-                                    class="links" href="/gender/add">Add New Gender</a></li>
-                            <li class="sidebar-link" data-title="Add New User"><i class="fa-solid fa-user-plus"></i><a
-                                    class="links" href="/user/add">Add New User</a></li>
-
-                        </ul>
-                    </nav>
+        <div class="display-flex">
+            <div class="sidebar min-width-dvw-20" id="sidebar">
+                <div class="text-color-white display-flex flex-direction-column min-height-dvh-100">
+                    <input type="checkbox" name="check" id="check" class="checkbox display-none">
+                    <label for="check" class="x-container">
+                        <i class="fa fa-x border-radius-full x font-size-large"></i>
+                    </label>
+                    <section class="margin-left-auto margin-right-auto">
+                        <img src="/img/bg.png" class="sidebar-icon border-radius-full" alt="" srcset="">
+                        <h2 class="margin-top-1 text-align-center">Lorem Ipsum</h2>
+                    </section>
+                    <section>
+                        <nav class="sidebar-link-container margin-top-5">
+                            <ul class="list-container" id="list-container">
+                                <h3 class="text-align-center">List</h3>
+                                <li class="margin-bottom-half">
+                                    <i class="padding-right-half fa-solid fa-mars"></i>
+                                    <a href="/genders">Gender List</a>
+                                </li>
+                                <li class="margin-bottom-2">
+                                    <i class="padding-right-half fa-solid fa-user"></i>
+                                    <a href="/users">User List</a>
+                                </li>
+                                <h3 class="text-align-center">Form</h3>
+                                <li class="margin-bottom-half">
+                                    <i class="padding-right-half fa-solid fa-venus"></i>
+                                    <a href="/gender/add">Gender Form</a>
+                                </li>
+                                <li class="margin-bottom-half">
+                                    <i class="padding-right-half fa-solid fa-user-plus"></i>
+                                    <a href="/user/add">User Form</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </section>
                 </div>
             </div>
-            <div id="dashboard">
-                <h1>Dashboard</h1>
-                <div class="gender-table-container container">
-                    <div class="table-header">
-                        <h2>User List</h2>
-                        <div id="pagination">
-                                {{-- <form id="searchForm" class="d-flex" role="search">
-                                    <input id="searchInput" class="form-control me-2" type="search"
-                                        placeholder="Search for available gender" aria-label="Search">
-                                </form> --}}
-                            {{ $users->links('vendor.pagination.custom-pagination') }}
-                        </div>
-                    </div>
-                    <table class="table table-striped">
-                        @if (session()->has('message'))
-                            <div id="success-message" class="alert alert-success">
-                                {{ session('message') }}
+            <div class="content min-width-dvw-100">
+                <div class="site">
+                    <header class="navbar background-color-indigo-dark-9 max-width-dvw-100">
+                        <h1 class="site-title text-color-white">
+                            <input type="checkbox" name="check" id="check" class="checkbox display-none">
+                            <label for="check" class="margin-right-1">
+                                <i class="fa fa-bars border-radius-full font-size-large"></i>
+                            </label>
+                        </h1>
+                        <h1 class="text-color-white">
+                            Dashboard
+                        </h1>
+                        <a class="sign-out-btn button-error text-color-white padding-left-1 padding-right-1 padding-top-half padding-bottom-half display-flex align-items-center"
+                            href="javascript:void(0)">
+                            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                            <p class="sign-out-label">Sign Out</p>
+                        </a>
+                    </header>
+                    <main class="margin-bottom-3">
+                        <div class="container">
+                            <div id="dashboard"
+                                class="margin-top-3 background-color-gray-light-6 padding-bottom-1 border-radius-large table-container">
+                                <section class="table-header padding-left-2 padding-right-2 ">
+                                    <h1 class="padding-top-1">List of Available User</h1>
+                                    <div class="display-flex justify-space-between" id="pagination">
+                                        {{ $users->links('vendor.pagination.custom-pagination') }}
+                                    </div>
+                                </section>
+                                <div class="margin-top-half padding-left-2 padding-right-2">
+                                    <table class="min-width-percent-100">
+                                        @if (session()->has('message'))
+                                            <div id="success-message"
+                                                class="background-color-secondary text-color-white padding-1 text-align-center margin-bottom-half">
+                                                {{ session('message') }}
+                                            </div>
+                                        @endif
+                                        <thead class="background-color-white">
+                                            <tr>
+                                                <th>Last Name</th>
+                                                <th>First Name</th>
+                                                <th>Middle Name</th>
+                                                <th>Suffix Name</th>
+                                                <th>Gender</th>
+                                                <th>Created At</th>
+                                                <th>Updated At</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tableBody" class="min-width-percent-100">
+                                            @foreach ($users as $user)
+                                                <tr class="table-row">
+                                                    <td>{{ $user->last_name }}</td>
+                                                    <td>{{ $user->first_name }}</td>
+                                                    <td>{{ $user->middle_name }}</td>
+                                                    <td>{{ $user->suffix_name }}</td>
+                                                    <td>{{ $user->gender->gender }}</td>
+                                                    <td>{{ $user->created_at }}</td>
+                                                    <td>{{ $user->updated_at }}</td>
+                                                    <td>
+                                                        <div class="display-flex justify-center button-group">
+                                                            <a href="/user/show/{{ $user->user_id }}"
+                                                                class="button-secondary padding-top-half padding-bottom-half padding-left-1 padding-right-1 text-color-white margin-bottom-half margin-top-half">View</a>
+                                                            <a href="/user/edit/{{ $user->user_id }}"
+                                                                class="button-gray padding-top-half padding-bottom-half padding-left-1 padding-right-1 text-color-white margin-bottom-half margin-top-half">Edit</a>
+                                                            <a href="/user/delete/{{ $user->user_id }}"
+                                                                class="button-error padding-top-half padding-bottom-half padding-left-1 padding-right-1 text-color-white margin-bottom-half margin-top-half">Delete</a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
-                        @endif
-                        <thead>
-                            <tr>
-                                <th>Last Name</th>
-                                <th>First Name</th>
-                                <th>Middle Name</th>
-                                <th>Suffix Name</th>
-                                <th>Gender</th>
-                                <th>Created At</th>
-                                <th>Updated At</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody id="tableBody">
-                            @foreach ($users as $user)
-                                <tr>
-                                    <td>{{ $user->last_name }}</td>
-                                    <td>{{ $user->first_name }}</td>
-                                    <td>{{ $user->middle_name }}</td>
-                                    <td>{{ $user->suffix_name }}</td>
-                                    <td>{{ $user->gender->gender }}</td>
-                                    <td>{{ $user->created_at }}</td>
-                                    <td>{{ $user->updated_at }}</td>
-                                    <td>
-                                        <div class="btn-group">
-                                            <a href="/user/show/{{ $user->user_id }}"
-                                                class="btn btn-outline-primary">View</a>
-                                            <a href="/user/edit/{{ $user->user_id }}"
-                                                class="btn btn-outline-warning">Edit</a>
-                                            <a href="/user/delete/{{ $user->user_id }}"
-                                                class="btn btn-outline-danger">Delete</a>
-                                        </div>
-                                    </td>
-                                </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-                    {{-- <footer></footer> --}}
+                        </div>
+                    </main>
                 </div>
             </div>
         </div>
 
         <script src="/js/search.js"></script>
-        <script src="/js/success-message.js"></script>
         <script src="/js/links.js"></script>
+        <script src="/js/success-message.js"></script>
         <script src="/js/sidebar-toggle.js"></script>
-        <!-- Bootstrap Bundle with Popper -->
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
     </body>
 @endsection

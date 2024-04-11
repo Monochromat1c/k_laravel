@@ -77,7 +77,7 @@ class GenderController extends Controller
         $gender->save();
         session()->flash('message', 'Successfully Updated.');
 
-        return redirect()->route('gender.gender');
+        return redirect('/genders');
     }
 
     // Delete confirmation
