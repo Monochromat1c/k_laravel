@@ -1,8 +1,10 @@
 @extends('layout.main_new')
 @section('content')
+    <link rel="stylesheet" href="/css/style.css">
+
     </head>
 
-    <body onload="loadPage()">
+    <body>
 
         <div class="display-flex">
             <div class="sidebar min-width-dvw-20" id="sidebar">

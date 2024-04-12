@@ -1,8 +1,10 @@
 @extends('layout.main_new')
 @section('content')
+    <link rel="stylesheet" href="/css/style.css">
+
     </head>
 
-    <body onload="loadPage()">
+    <body>
 
         <div class="display-flex">
             <div class="sidebar min-width-dvw-20" id="sidebar">
@@ -67,8 +69,8 @@
                                     <h1 class="padding-top-1">List of Available User</h1>
                                     <form id="user-search-form" class="display-flex justify-space-between margin-top-1 padding-bottom-1" action="{{ route('user.user') }}" method="GET">
                                         <section>
-                                            <input class="padding-half border-radius-large" type="text" name="q"
-                                                value="{{ $query ?? '' }}" placeholder="Search users...">
+                                            <input class="padding-half border-radius border min-width-dvw-20" type="text" name="q"
+                                                value="{{ $query ?? '' }}" placeholder="Search for users...">
                                             <button
                                                 class="button-primary text-color-white padding-button-2 border-radius-large"
                                                 type="submit">Search</button>
