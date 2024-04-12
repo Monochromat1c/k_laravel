@@ -5,7 +5,7 @@
     </head>
 
     <body>
-            <div id="container" class="container display-flex justify-center">
+            <div id="container" class="">
                 <div id="form-wrapper" class="card background-color-gray-light-5 min-width-dvw-50 max-width-dvw-50 max-height-dvh-90 margin-top-3 margin-bottom-2">
                     <form id="gender-form" class="" action="" method="POST">
                         @csrf
@@ -26,52 +26,52 @@
                                 </div>
                             @endif
                             <section class="user-input-container">
-                                <div class="display-flex flex-direction-column margin-bottom-1">
+                                <div class="margin-bottom-1">
                                     <label for="first_name">First Name:</label>
                                     <input type="text" class="padding-half border-radius border" id="first_name" name="first_name"
                                         value="{{ $user->first_name }}" readonly />
                                 </div>
-                                <div class="display-flex flex-direction-column margin-bottom-1">
+                                <div class="margin-bottom-1">
                                     <label for="middle_name">Middle Name:</label>
                                     <input type="text" class="padding-half border-radius border" id="middle_name" name="middle_name"
                                         value="{{ $user->middle_name }}" readonly />
                                 </div>
-                                <div class="display-flex flex-direction-column margin-bottom-1">
+                                <div class="margin-bottom-1">
                                     <label for="last_name">Last Name:</label>
                                     <input type="text" class="padding-half border-radius border" id="last_name" name="last_name"
                                         value="{{ $user->last_name }}" readonly />
                                 </div>
-                                <div class="display-flex flex-direction-column margin-bottom-1">
+                                <div class="margin-bottom-1">
                                     <label for="suffix_name">Suffix Name:</label>
                                     <input type="text" class="padding-half border-radius border" id="suffix_name" name="suffix_name"
                                         value="{{ $user->suffix_name }}" readonly />
                                 </div>
-                                <div class="display-flex flex-direction-column margin-bottom-1">
+                                <div class="margin-bottom-1">
                                     <label for="birthday">Birth Date:</label>
                                     <input type="date" class="padding-half border-radius border" id="birthday" name="birthday"
                                         value="{{ $user->birthday }}" readonly />
                                 </div>
-                                <div class="display-flex flex-direction-column margin-bottom-1">
+                                <div class="margin-bottom-1">
                                     <label for="gender">Gender:</label>
                                     <input type="text" class="padding-half border-radius border" id="gender" name="gender"
                                         value="{{ $user->gender->gender }}" readonly />
                                 </div>
-                                <div class="display-flex flex-direction-column margin-bottom-1 column-span-2">
+                                <div class="margin-bottom-1 column-span-2">
                                     <label for="address">Address:</label>
                                     <input type="text" class="padding-half border-radius border" id="address" name="address"
                                         value="{{ $user->address }}" readonly />
                                 </div>
-                                <div class="display-flex flex-direction-column margin-bottom-1 column-span-2">
+                                <div class="margin-bottom-1 column-span-2">
                                     <label for="contact_number">Contact Number:</label>
                                     <input type="text" class="padding-half border-radius border" id="contact_number" name="contact_number"
                                         value="{{ $user->contact_number }}" readonly />
                                 </div>
-                                <div class="display-flex flex-direction-column margin-bottom-1 column-span-2">
+                                <div class="margin-bottom-1 column-span-2">
                                     <label for="email">Email Address:</label>
                                     <input type="text" class="padding-half border-radius border" id="email" name="email"
                                         value="{{ $user->email }}" readonly />
                                 </div>
-                                <div class="display-flex flex-direction-column margin-bottom-1 column-span-2">
+                                <div class="margin-bottom-1 column-span-2">
                                     <label for="username">Username:</label>
                                     <input type="text" class="padding-half border-radius border" id="username" name="username"
                                         value="{{ $user->username }}" readonly />

@@ -16,3 +16,7 @@ body {
 #form-wrapper {
     overflow-y: auto;
 }
+
+.user-input-container {
+    display: grid;
+}
