@@ -1,6 +1,6 @@
 :root {
     --fz-header: clamp(2rem, 5vw + 1rem, 6rem);
-    --fc-header: #ECA56B;
+    --fc-header: #eca56b;
 }
 
 * {
@@ -37,7 +37,7 @@ body {
     overflow-wrap: break-word;
     text-wrap: pretty;
     hyphens: auto;
-    font-family: "Poppins", serif;
+    font-family: 'Poppins', serif;
     line-height: 1.5;
 }
 
@@ -47,7 +47,7 @@ body {
     display: grid;
     grid-template-rows: auto 1fr auto;
     grid-template-columns: minmax(0, 1fr);
-    background: #14121f url("/img/dashboard-bg.png") no-repeat center/cover;
+    background: #14121f url('/img/dashboard-bg.png') no-repeat center/cover;
 }
 
 /* Form */
@@ -58,7 +58,7 @@ body {
     max-width: calc(100dvw - 50dvw);
     height: calc(100dvh - 40dvh);
     max-height: calc(100dvh - 40dvh);
-    background: #14121f url("/img/sidebar-bg.png") no-repeat center/cover;
+    background: #14121f url('/img/sidebar-bg.png') no-repeat center/cover;
     transition: all 0.3s ease;
 }
 
@@ -74,14 +74,10 @@ body {
     border-radius: 1.5rem 5rem 5rem 1.5rem;
 }
 
-h1, h2 {
-    letter-spacing: .1rem;
-}
-
 h1 {
     font-size: var(--fz-header);
     color: var(--fc-header);
-    font-family: "Impact", serif;
+    font-family: 'Impact', serif;
     @media (min-height: 900px) {
         margin-top: 1em;
     }
@@ -89,13 +85,12 @@ h1 {
 
 h2 {
     color: var(--fc-header);
-    font-family: "Impact", serif;
     font-size: 1.5em;
     margin-bottom: 1rem;
 }
 
 h3 {
-    font-family: "Papyrus", serif;
+    font-family: 'Papyrus', serif;
     @media (min-height: 900px) {
         margin-bottom: 2em;
     }
@@ -108,7 +103,7 @@ input {
 }
 
 label {
-    font-family: "Georgia", serif;
+    font-family: 'Georgia', serif;
 }
 
 input {
@@ -136,7 +131,7 @@ input {
     max-width: 100%;
     object-fit: cover;
     border-radius: 0 5rem 5rem 0;
-    transition: all .3s ease;
+    transition: all 0.3s ease;
 }
 
 /* .form__image img:hover {
@@ -178,7 +173,7 @@ input {
     max-width: 100%;
     object-fit: cover;
     border-radius: 0 5rem 5rem 0;
-    transition: all .3s ease;
+    transition: all 0.3s ease;
 }
 
 .form__image img:hover {

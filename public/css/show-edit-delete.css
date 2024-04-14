@@ -4,7 +4,7 @@
 
 /* View User */
 body {
-    background-image: url("/img/bg-2.svg");
+    background-image: url('/img/bg-2.svg');
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -15,8 +15,40 @@ body {
 
 #form-wrapper {
     overflow-y: auto;
+    max-width: 90dvw;
 }
 
 .user-input-container {
     display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+    min-width: 100%;
+    max-width: 60dvw;
+    margin: 0 auto;
+}
+
+.grid-column-span-2 {
+    grid-column: span 2;
+}
+
+/* Edit User */
+.submit-button {
+    padding: 1rem 3rem !important;
+    color: white;
+    margin-top: 1.5rem;
+}
+
+.back-button {
+    padding: .7rem 3rem !important;
+    color: white;
+    margin-top: 1.5rem;
+}
+
+.input-file {
+    background-color: #efefef;
+}
+
+::-webkit-file-upload-button {
+    padding: 1rem;
+    outline: none;
 }

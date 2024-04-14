@@ -14,7 +14,8 @@
                         <i class="fa fa-x border-radius-full x font-size-large"></i>
                     </label>
                     <section class="margin-left-auto margin-right-auto">
-                        <img src="/img/bg.png" class="sidebar-icon border-radius-full display-flex margin-auto" alt="icon" srcset="">
+                        <img src="/img/bg.png" class="sidebar-icon border-radius-full display-flex margin-auto"
+                            alt="icon" srcset="">
                         <h2 class="margin-top-1 text-align-center">Administrator</h2>
                     </section>
                     <section>
@@ -56,7 +57,7 @@
                             Dashboard
                         </h1>
                         <a class="sign-out-btn button-error text-color-white padding-left-1 padding-right-1 padding-top-half padding-bottom-half display-flex align-items-center"
-                            href="javascript:void(0)">
+                            href="/user/process/logout">
                             <i class="fa-solid fa-arrow-right-from-bracket"></i>
                             <p class="sign-out-label">Sign Out</p>
                         </a>
@@ -67,13 +68,15 @@
                                 class="margin-top-3 background-color-gray-light-6 padding-bottom-1 border-radius-large table-container">
                                 <section class="table-header padding-left-2 padding-right-2 ">
                                     <h1 class="padding-top-1">List of Available User</h1>
-                                    <form id="user-search-form" class="display-flex justify-space-between margin-top-1 padding-bottom-1" action="{{ route('user.user') }}" method="GET">
+                                    <form id="user-search-form"
+                                        class="display-flex justify-space-between margin-top-1 padding-bottom-1"
+                                        action="{{ route('user.user') }}" method="GET">
                                         <section>
-                                            <input class="padding-half border-radius border min-width-dvw-20" type="text" name="q"
-                                                value="{{ $query ?? '' }}" placeholder="Search for users...">
-                                            <button
-                                                class="button-primary text-color-white padding-button-2 border-radius-large"
-                                                type="submit">Search</button>
+                                            <input class="user-search border-radius border min-width-dvw-20" type="text"
+                                                name="q" value="{{ $query ?? '' }}"
+                                                placeholder="Search for users...">
+                                            <button class="button-primary text-color-white search-button border-radius-full"
+                                                type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                                         </section>
                                         <section>
                                             <select class="padding-half border-radius-large" id="gender-filter"
@@ -99,6 +102,7 @@
                                         @endif
                                         <thead class="background-color-white">
                                             <tr>
+                                                <th>Profile</th>
                                                 <th>Last Name</th>
                                                 <th>First Name</th>
                                                 <th>Middle Name</th>
@@ -112,6 +116,10 @@
                                         <tbody id="tableBody" class="min-width-percent-100">
                                             @foreach ($users as $user)
                                                 <tr class="table-row">
+                                                    <td class="display-flex margin-top-half margin-bottom-half margin-left-half padding-right-half">
+                                                        <img src="{{ $user->user_image ? asset('storage/img/user/' . $user->user_image) : asset('img/default-picture.jpg') }}"
+                                                            width="75" height="75" class="border-radius-full margin-auto" alt="">
+                                                    </td>
                                                     <td>{{ $user->last_name }}</td>
                                                     <td>{{ $user->first_name }}</td>
                                                     <td>{{ $user->middle_name }}</td>

@@ -16,7 +16,7 @@
 }
 
 body {
-    background: #14121f url("/img/dashboard-bg.png") no-repeat center/cover;
+    background: #14121f url('/img/dashboard-bg.png') no-repeat center/cover;
     overflow-x: hidden;
 }
 
@@ -24,7 +24,7 @@ body {
 .navbar {
     top: 0;
     position: sticky;
-    background: #14121f url("/img/sidebar-bg.png") no-repeat center/cover;
+    background: #14121f url('/img/sidebar-bg.png') no-repeat center/cover;
 }
 
 .fa-bars {
@@ -49,7 +49,7 @@ body {
 }
 
 #sidebar {
-    background: #14121f url("/img/sidebar-bg.png") no-repeat center/cover;
+    background: #14121f url('/img/sidebar-bg.png') no-repeat center/cover;
 
     @media (max-width: 500px) {
         max-width: 65dvw;
@@ -105,14 +105,14 @@ body {
 
 .list-container li {
     padding: 1.5rem;
-    border-bottom: .1rem solid #d1ce32;
+    border-bottom: 0.1rem solid #d1ce32;
     padding-left: 3rem;
 }
 
 .list-container li,
 .list-container li i,
-.list-container li a  {
-    transition: .3s ease;
+.list-container li a {
+    transition: 0.3s ease;
 }
 
 .list-container li a {
@@ -121,12 +121,9 @@ body {
 
 .list-container li:hover {
     background-color: #44344d;
-    border-left: .3rem solid #cca421;
+    border-left: 0.3rem solid #cca421;
     border-bottom: none;
 
-    i, a{
-    }
-    
     i {
         padding-left: 3rem;
     }
@@ -188,6 +185,15 @@ table {
     background-color: #cccccc;
     top: 0;
     position: sticky;
+}
+
+.user-search {
+    padding-inline: 1.3rem;
+    padding-block: 1rem;
+}
+
+.search-button {
+    padding: 1rem;
 }
 
 td {

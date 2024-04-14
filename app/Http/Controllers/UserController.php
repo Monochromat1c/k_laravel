@@ -31,6 +31,7 @@ class UserController extends Controller
     {
         // Validation rules for user input
         $rules = [
+            'user_image' => 'nullable|mimes:jpeg,png,bmp,biff|max:4096',
             'first_name' => 'required|string|max:255',
             'middle_name' => 'nullable|string|max:255',
             'last_name' => 'required|string|max:255',
@@ -47,6 +48,17 @@ class UserController extends Controller
         // Validate the request data
         $validatedData = $request->validate($rules);
 
+        // If user uploads a new image
+        if ($request->hasFile('user_image')) {
+            $uploadedFile = $request->file('user_image');
+            $filenameWithExtension = $uploadedFile->getClientOriginalName();
+            $filename = pathinfo($filenameWithExtension, PATHINFO_FILENAME);
+            $extension = $uploadedFile->getClientOriginalExtension();
+            $filenameToStore = $filename . '_' . time() . '.' . $extension;
+            $uploadedFile->storeAs('public/img/user', $filenameToStore);
+            $validatedData['user_image'] = $filenameToStore;
+        }
+
         // Create the new user
         $user = new \App\Models\User();
         $user->fill($validatedData);
@@ -61,6 +73,7 @@ class UserController extends Controller
         // Redirect back to the user form
         return redirect()->route('user.addNewUser');
     }
+
 
     // View user table
     public function user(Request $request)
@@ -112,6 +125,7 @@ class UserController extends Controller
     {
         // Validation rules for user input
         $rules = [
+            'user_image' => 'nullable|mimes:jpeg,png,bmp,biff|max:4096',
             'first_name' => 'required|string|max:255',
             'middle_name' => 'nullable|string|max:255',
             'last_name' => 'required|string|max:255',
@@ -132,6 +146,17 @@ class UserController extends Controller
         // Validate the request data
         $validatedData = $request->validate($rules);
 
+        // If user uploads a new image
+        if ($request->hasFile('user_image')) {
+            $uploadedFile = $request->file('user_image');
+            $filenameWithExtension = $uploadedFile->getClientOriginalName();
+            $filename = pathinfo($filenameWithExtension, PATHINFO_FILENAME);
+            $extension = $uploadedFile->getClientOriginalExtension();
+            $filenameToStore = $filename . '_' . time() . '.' . $extension;
+            $uploadedFile->storeAs('public/img/user', $filenameToStore);
+            $validatedData['user_image'] = $filenameToStore;
+        }
+
         // If password is being updated, hash it
         if ($request->filled('password')) {
             $validatedData['password'] = bcrypt($request->password);
@@ -146,6 +171,7 @@ class UserController extends Controller
         // Redirect back to the user form
         return redirect()->route('user.user');
     }
+
 
     // Delete confirmation
     public function delete($id)
@@ -164,7 +190,7 @@ class UserController extends Controller
     }
 
     // Login Page
-    public function loginPage(){
+    public function login(){
         return view('loginPage');
     }
 
@@ -186,4 +212,13 @@ class UserController extends Controller
         }
     }
 
+    // Log out
+    public function logout (Request $request) {
+        auth()->logout();
+
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect('/');
+    }
 }

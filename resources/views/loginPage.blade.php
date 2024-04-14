@@ -17,22 +17,27 @@
                         <form action="/user/process/login" method="post">
                             @csrf
                             <h1>Welcome!</h1>
-                            <h3>New here? <a href="">Create an account now</a></h3>
-                            <h2>Log In</h2>
-                            <label for="username">Username:</label>
-                            <input type="text" class="form-control" id="username" name="username"
-                                placeholder="Enter your username" />
-                            @error('username')
-                                <p class="text-danger">{{ $message }}</p>
-                            @enderror
-                            <label for="password">Password:</label>
-                            <input type="password" class="form-control" id="password" name="password"
-                                placeholder="Enter your password" />
-                            @error('password')
-                                <p class="text-danger">{{ $message }}</p>
-                            @enderror
+                            <h3 class="margin-bottom-1">New here? <a href="javascript:void(0)">Create an account now</a>
+                            </h3>
+                            <h2 class="margin-bottom-1">Log In</h2>
+                            <div class="display-flex flex-direction-column">
+                                <label for="username">Username:</label>
+                                <input type="text" class="padding-half" id="username" name="username"
+                                    placeholder="Enter your username" />
+                                @error('username')
+                                    <p class="text-danger">{{ $message }}</p>
+                                @enderror
+                            </div>
+                            <div class="display-flex flex-direction-column margin-bottom-1">
+                                <label for="password">Password:</label>
+                                <input type="password" class="padding-half text-color-black" id="password" name="password"
+                                    placeholder="Enter your password" />
+                                @error('password')
+                                    <p class="text-danger">{{ $message }}</p>
+                                @enderror
+                            </div>
 
-                            <button type="submit" class="btn btn-success user-submit-button float-end mt-3">Log In</button>
+                            <button type="submit" class="float-inline-end button-secondary border-radius-medium padding-button-2">Log In</button>
                         </form>
                     </div>
                 </div>

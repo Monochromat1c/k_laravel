@@ -1,5 +1,5 @@
 @font-face {
-    font-family: "RusselSquare";
+    font-family: 'RusselSquare';
     src: url(/fonts/RusselSquare.ttf);
 }
 
@@ -8,8 +8,8 @@
     padding: 0;
     box-sizing: border-box;
     /* font-family: "Lucida Fax"; */
-    font-family: "RusselSquare", "Lucida Fax", "Lucida Sans",
-        "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva,
+    font-family: 'RusselSquare', 'Lucida Fax', 'Lucida Sans',
+        'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva,
         Verdana, sans-serif;
     scroll-behavior: smooth;
     /* border: 0.5px dotted green; */
@@ -56,7 +56,7 @@ body {
     display: none;
     /* width: 30svw; */
     max-height: 100svh;
-    background: #14121f url("/img/sidebar-bg.png") no-repeat center/cover;
+    background: #14121f url('/img/sidebar-bg.png') no-repeat center/cover;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -227,7 +227,7 @@ body {
 #sidebar nav ul li.active {
     font-size: 1.5rem;
     background: rgba(60, 56, 82, 0.77);
-    background-image: url("/img/dashboard-bg.png");
+    background-image: url('/img/dashboard-bg.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -413,7 +413,7 @@ body {
     width: 100%;
     min-width: 70svw;
     background: #37334d;
-    background-image: url("/img/dashboard-bg.png");
+    background-image: url('/img/dashboard-bg.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -509,7 +509,7 @@ body {
     min-height: 55svh;
     padding: 0 1rem 0 1rem;
     margin: 6svh auto;
-    border-bottom: 1rem solid #cfcdd6;;
+    border-bottom: 1rem solid #cfcdd6;
     /* scrollbar-color: #cfcdd6;; */
     /* border-bottom-width: 1rem; */
 }
@@ -561,13 +561,13 @@ body {
 
 .table thead tr th,
 .table tbody tr td {
-    font-family: "Lucida Fax", "Lucida Sans", "Lucida Sans Regular",
-        "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    font-family: 'Lucida Fax', 'Lucida Sans', 'Lucida Sans Regular',
+        'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 input {
-    font-family: "Lucida Fax", "Lucida Sans", "Lucida Sans Regular",
-        "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    font-family: 'Lucida Fax', 'Lucida Sans', 'Lucida Sans Regular',
+        'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 /* User Form */
@@ -643,9 +643,9 @@ input {
 }
 
 /* Log In Form */
-.login-form-container{
+.login-form-container {
     overflow: hidden;
-    background-image: url("/img/dashboard-bg.png");
+    background-image: url('/img/dashboard-bg.png');
     max-height: 100dvh;
     /* align-items: start; */
 }
@@ -654,24 +654,26 @@ input {
     color: #ffffff;
 }
 
-.login-form{
+.login-form {
     background: rgb(20, 18, 31, 0.44);
     backdrop-filter: blur(2rem);
     width: calc(100dvw - 50dvw);
     /* margin-top: calc(100dvh - 90dvh); */
     height: 50dvh;
-    transition: all .3s ease;
+    transition: all 0.3s ease;
 }
 
-.login-form:hover{
+.login-form:hover {
     transform: scale(1.03);
     border-radius: 3rem;
     box-shadow: -1px 8px 9px #553c4d;
 }
 
-.login-form-image-section, .form {
+.login-form-image-section,
+.form {
     max-width: 50%;
 }
+
 /* thead {
     position: sticky;
     z-index: 1;

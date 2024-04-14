@@ -1,4 +1,4 @@
-var errorMessage = document.getElementById("error_message");
+var errorMessage = document.getElementById('error_message');
 
 if (errorMessage) {
     setTimeout(function () {
@@ -6,7 +6,7 @@ if (errorMessage) {
     }, 3333);
 }
 
-var errorMessageAddGender = document.getElementById("error_message");
+var errorMessageAddGender = document.getElementById('error_message');
 
 if (errorMessageAddGender) {
     setTimeout(function () {

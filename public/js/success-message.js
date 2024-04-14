@@ -1,4 +1,4 @@
-var errorMessage = document.getElementById("success-message");
+var errorMessage = document.getElementById('success-message');
 
 if (errorMessage) {
     setTimeout(function () {

@@ -56,7 +56,7 @@
                             Dashboard
                         </h1>
                         <a class="sign-out-btn button-error text-color-white padding-left-1 padding-right-1 padding-top-half padding-bottom-half display-flex align-items-center"
-                            href="javascript:void(0)">
+                            href="/user/process/logout">
                             <i class="fa-solid fa-arrow-right-from-bracket"></i>
                             <p class="sign-out-label">Sign Out</p>
                         </a>
