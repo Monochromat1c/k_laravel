@@ -22,7 +22,7 @@
                             <h2 class="margin-bottom-1">Log In</h2>
                             <div class="display-flex flex-direction-column">
                                 <label for="username">Username:</label>
-                                <input type="text" class="padding-half" id="username" name="username"
+                                <input type="text" class="padding-half text-color-black" id="username" name="username"
                                     placeholder="Enter your username" />
                                 @error('username')
                                     <p class="text-danger">{{ $message }}</p>
